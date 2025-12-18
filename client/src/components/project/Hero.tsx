@@ -31,7 +31,7 @@ export function Hero() {
   if (loading || !activeProject) {
     return (
       <div className="relative w-full h-screen overflow-hidden bg-background flex items-center justify-center">
-        <div className="text-white/40">Loading...</div>
+        <div className="text-foreground/40">Loading...</div>
       </div>
     );
   }
@@ -49,7 +49,7 @@ export function Hero() {
           className="absolute inset-0 z-0"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10" />
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-foreground/20 z-10" />
           <img
             src={activeProject.image}
             alt={activeProject.title}
@@ -73,39 +73,39 @@ export function Hero() {
                 <span className="text-primary text-sm font-medium tracking-widest uppercase">
                   {activeProject.category}
                 </span>
-                <span className="w-12 h-[1px] bg-white/30"></span>
-                <span className="text-white/70 text-sm font-light tracking-widest">
+                <span className="w-12 h-[1px] bg-foreground/30"></span>
+                <span className="text-foreground/70 text-sm font-light tracking-widest">
                   {activeProject.location}
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-white mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-foreground mb-6 leading-[0.9]">
                 {activeProject.title}
               </h1>
 
-              <p className="text-white/80 max-w-lg text-lg font-light leading-relaxed mb-10 text-balance">
+              <p className="text-foreground/80 max-w-lg text-lg font-light leading-relaxed mb-10 text-balance">
                 {activeProject.description}
               </p>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10 border-t border-white/10 pt-8 max-w-2xl">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10 border-t border-foreground/10 pt-8 max-w-2xl">
                 <div>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Timeline</p>
-                  <p className="text-white text-xl font-heading">{activeProject.timeline}</p>
+                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Timeline</p>
+                  <p className="text-foreground text-xl font-heading">{activeProject.timeline}</p>
                 </div>
                 <div>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Value</p>
-                  <p className="text-white text-xl font-heading">{activeProject.value}</p>
+                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Value</p>
+                  <p className="text-foreground text-xl font-heading">{activeProject.value}</p>
                 </div>
                 <div className="hidden md:block">
-                  <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Year</p>
-                  <p className="text-white text-xl font-heading">{activeProject.year}</p>
+                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Year</p>
+                  <p className="text-foreground text-xl font-heading">{activeProject.year}</p>
                 </div>
               </div>
 
               <Link 
                 href={`/projects?id=${activeProject.id}`}
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-white text-black hover:bg-primary transition-colors rounded-full text-sm font-medium tracking-widest uppercase"
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-colors rounded-full text-sm font-medium tracking-widest uppercase"
               >
                 View Project
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

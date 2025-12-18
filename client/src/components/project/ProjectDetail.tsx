@@ -13,7 +13,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
     <div className="h-full overflow-y-auto bg-background">
       {/* Detail Header Image */}
       <div className="relative h-[50vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-background z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 to-background z-10" />
         <img
           src={project.image}
           alt={project.title}
@@ -30,22 +30,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 <span className="inline-block px-3 py-1 mb-4 border border-primary/30 rounded-full text-[10px] uppercase tracking-widest text-primary bg-primary/5 backdrop-blur-sm">
                   {project.category}
                 </span>
-                <h1 className="text-4xl md:text-6xl font-heading text-white mb-4">
+                <h1 className="text-4xl md:text-6xl font-heading text-foreground mb-4">
                   {project.title}
                 </h1>
-                <p className="text-white/60 text-lg font-light max-w-xl">
+                <p className="text-foreground/60 text-lg font-light max-w-xl">
                   {project.description}
                 </p>
               </div>
               
-              <div className="flex gap-8 border-l border-white/10 pl-8">
+              <div className="flex gap-8 border-l border-foreground/10 pl-8">
                  <div>
-                    <span className="block text-[10px] text-white/40 uppercase tracking-widest mb-1">Value</span>
-                    <span className="text-xl text-white font-heading">{project.value}</span>
+                    <span className="block text-[10px] text-foreground/40 uppercase tracking-widest mb-1">Value</span>
+                    <span className="text-xl text-foreground font-heading">{project.value}</span>
                  </div>
                  <div>
-                    <span className="block text-[10px] text-white/40 uppercase tracking-widest mb-1">Completed</span>
-                    <span className="text-xl text-white font-heading">{project.year}</span>
+                    <span className="block text-[10px] text-foreground/40 uppercase tracking-widest mb-1">Completed</span>
+                    <span className="text-xl text-foreground font-heading">{project.year}</span>
                  </div>
               </div>
             </div>
@@ -58,8 +58,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         {project.gallery.map((section, idx) => (
           <section key={idx}>
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-2xl font-heading text-white">{section.category}</h3>
-              <div className="h-[1px] flex-1 bg-white/10"></div>
+              <h3 className="text-2xl font-heading text-foreground">{section.category}</h3>
+              <div className="h-[1px] flex-1 bg-foreground/10"></div>
             </div>
             
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -72,8 +72,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                         alt={`${project.title} - ${section.category} ${imgIdx + 1}`}
                         className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <Maximize2 className="text-white w-8 h-8 drop-shadow-lg" />
+                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <Maximize2 className="text-foreground w-8 h-8 drop-shadow-lg" />
                       </div>
                     </div>
                   </DialogTrigger>

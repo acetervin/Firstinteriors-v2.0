@@ -17,7 +17,7 @@ export function AboutSection() {
             alt="Interior Design Detail"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
         </motion.div>
 
         {/* Content - Right */}
@@ -29,26 +29,26 @@ export function AboutSection() {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-5xl md:text-6xl font-heading text-white mb-6 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-heading text-foreground mb-6 leading-tight">
               Crafting Timeless Spaces
             </h2>
-            <p className="text-white/70 text-lg font-light leading-relaxed">
+            <p className="text-foreground/70 text-lg font-light leading-relaxed">
               With over 15 years of experience in luxury interior design, we create environments that transcend trends. Each project is a dialogue between architecture, light, and the lives of those who inhabit these spaces. We believe in the power of intentional design—where every material, every color, every form serves a purpose.
             </p>
           </div>
 
-          <div className="space-y-4 border-t border-white/10 pt-8">
+          <div className="space-y-4 border-t border-foreground/10 pt-8">
             <div className="flex gap-4">
               <span className="text-primary font-heading text-xl">✓</span>
-              <p className="text-white/80">Bespoke residential and commercial projects</p>
+              <p className="text-foreground/80">Bespoke residential and commercial projects</p>
             </div>
             <div className="flex gap-4">
               <span className="text-primary font-heading text-xl">✓</span>
-              <p className="text-white/80">Sustainable materials and timeless aesthetics</p>
+              <p className="text-foreground/80">Sustainable materials and timeless aesthetics</p>
             </div>
             <div className="flex gap-4">
               <span className="text-primary font-heading text-xl">✓</span>
-              <p className="text-white/80">Award-winning designs and international recognition</p>
+              <p className="text-foreground/80">Award-winning designs and international recognition</p>
             </div>
           </div>
         </motion.div>

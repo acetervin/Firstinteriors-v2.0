@@ -11,7 +11,7 @@ interface ProjectDockProps {
 export function ProjectDock({ projects, activeProject, onSelect }: ProjectDockProps) {
   return (
     <div className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-4">
-      <span className="text-[10px] uppercase tracking-widest text-white/40 mb-2 mr-1">Select Project</span>
+      <span className="text-[10px] uppercase tracking-widest text-foreground/40 mb-2 mr-1">Select Project</span>
       <div className="flex gap-3 glass p-2 rounded-2xl">
         {projects.map((project) => (
           <button
@@ -41,7 +41,7 @@ export function ProjectDock({ projects, activeProject, onSelect }: ProjectDockPr
             
             {/* Tooltip on hover */}
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              <span className="text-[10px] bg-black/80 text-white px-2 py-1 rounded backdrop-blur-sm">
+              <span className="text-[10px] bg-foreground/20 text-foreground px-2 py-1 rounded backdrop-blur-sm">
                 {project.title}
               </span>
             </div>

@@ -25,12 +25,12 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-6 md:px-20 flex items-center justify-between",
-        scrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-foreground/10" : "bg-transparent"
       )}
     >
       {/* Logo */}
       <Link href="/">
-        <a className="text-sm md:text-2xl font-heading font-light tracking-tight text-white uppercase flex-shrink-0">
+        <a className="text-sm md:text-2xl font-heading font-light tracking-tight text-foreground flex-shrink-0">
           First Interior
         </a>
       </Link>
@@ -42,7 +42,7 @@ export function Navbar() {
             <a
               className={cn(
                 "text-sm tracking-widest uppercase hover:text-primary transition-colors",
-                location === item.href ? "text-primary" : "text-white/80"
+                location === item.href ? "text-primary" : "text-foreground/70"
               )}
             >
               {item.label}
@@ -51,7 +51,7 @@ export function Navbar() {
         ))}
         <a
           href="mailto:hello@firstinteriordesigns.ke"
-          className="px-6 py-2 border border-white/20 text-white text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-full"
+          className="px-6 py-2 border border-foreground/20 text-foreground text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all rounded-full"
         >
           Inquire
         </a>
@@ -60,7 +60,7 @@ export function Navbar() {
       {/* Mobile Menu Toggle */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden text-white/70 hover:text-white transition-colors ml-auto flex-shrink-0"
+        className="md:hidden text-foreground/70 hover:text-foreground transition-colors ml-auto flex-shrink-0"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,10 +68,10 @@ export function Navbar() {
 
       {/* Mobile Navigation Sidebar */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-white/5 md:hidden z-40">
+        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-foreground/10 md:hidden z-40">
           <div className="flex flex-col p-6 space-y-6">
             {/* Divider */}
-            <div className="border-t border-white/10" />
+            <div className="border-t border-foreground/10" />
 
             {/* Menu items */}
             <div className="space-y-4">
@@ -81,7 +81,7 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       "text-sm tracking-widest uppercase hover:text-primary transition-colors block",
-                      location === item.href ? "text-primary" : "text-white/80"
+                      location === item.href ? "text-primary" : "text-foreground/70"
                     )}
                   >
                     {item.label}
@@ -90,7 +90,7 @@ export function Navbar() {
               ))}
               <a
                 href="mailto:hello@firstinteriordesigns.ke"
-                className="px-6 py-2 border border-white/20 text-white text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all rounded-full text-center block"
+                className="px-6 py-2 border border-foreground/20 text-foreground text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all rounded-full text-center block"
               >
                 Inquire
               </a>

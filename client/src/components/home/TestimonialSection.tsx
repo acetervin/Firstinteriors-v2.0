@@ -38,7 +38,7 @@ export function TestimonialSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-6xl font-heading text-white mb-6 leading-tight"
+          className="text-5xl md:text-6xl font-heading text-foreground mb-6 leading-tight"
         >
           What Our Clients Say
         </motion.h2>
@@ -47,7 +47,7 @@ export function TestimonialSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-white/70 text-lg font-light max-w-2xl mx-auto"
+          className="text-foreground/70 text-lg font-light max-w-2xl mx-auto"
         >
           Transforming spaces, one project at a time. Hear from those who've experienced the First Interior Designs difference.
         </motion.p>
@@ -61,7 +61,7 @@ export function TestimonialSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8 hover:border-primary/50 transition-colors group"
+            className="bg-card backdrop-blur-sm border border-foreground/10 rounded-lg p-8 hover:border-primary/50 transition-colors group"
           >
             {/* Stars */}
             <div className="flex gap-1 mb-6">
@@ -74,15 +74,15 @@ export function TestimonialSection() {
             </div>
 
             {/* Quote */}
-            <p className="text-white/80 text-lg font-light leading-relaxed mb-8 relative">
+            <p className="text-foreground/80 text-lg font-light leading-relaxed mb-8 relative">
               <span className="text-primary text-3xl absolute -left-2 -top-4">"</span>
               {testimonial.quote}
             </p>
 
             {/* Author */}
-            <div className="border-t border-white/10 pt-6">
-              <p className="text-white font-medium">{testimonial.author}</p>
-              <p className="text-white/50 text-sm">{testimonial.role}</p>
+            <div className="border-t border-foreground/10 pt-6">
+              <p className="text-foreground font-medium">{testimonial.author}</p>
+              <p className="text-foreground/50 text-sm">{testimonial.role}</p>
             </div>
           </motion.div>
         ))}
