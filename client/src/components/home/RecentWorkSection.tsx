@@ -10,7 +10,8 @@ export function RecentWorkSection() {
   useEffect(() => {
     const loadProjects = async () => {
       const data = await getProjects();
-      setProjects(data);
+      const featured = data.filter(p => p.featured);
+      setProjects(featured);
       setLoading(false);
     };
 

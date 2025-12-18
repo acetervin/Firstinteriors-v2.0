@@ -5,8 +5,8 @@ export interface Project {
   description: string;
   location: string;
   year: string;
-  value: string;
   timeline: string;
+  featured: boolean;
   image: string;
   gallery: { category: string; images: string[] }[];
 }
