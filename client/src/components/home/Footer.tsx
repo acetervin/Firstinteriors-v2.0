@@ -45,12 +45,18 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-foreground/10 py-8 px-6 md:px-20">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-foreground/60 text-sm">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-foreground/60 text-sm gap-4">
           <p>© 2024 First Interior Designs, Nairobi. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Credits</a>
+          <div className="flex gap-6">
+            <Link href="/privacy">
+              <a className="hover:text-foreground transition-colors">Privacy</a>
+            </Link>
+            <Link href="/terms">
+              <a className="hover:text-foreground transition-colors">Terms</a>
+            </Link>
+            <Link href="/credits">
+              <a className="hover:text-foreground transition-colors">Credits</a>
+            </Link>
           </div>
         </div>
       </div>

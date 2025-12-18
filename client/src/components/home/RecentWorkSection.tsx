@@ -20,12 +20,11 @@ export function RecentWorkSection() {
   if (loading) {
     return (
       <section className="py-24 px-6 md:px-20 container mx-auto">
-        <div className="text-white/40 text-center">Loading projects...</div>
+        <div className="text-foreground/40 text-center">Loading projects...</div>
       </section>
     );
   }
 
-  // Create varied heights for masonry effect
   const recentWorks = projects.map((project, idx) => ({
     ...project,
     height: idx % 2 === 0 ? "h-80" : "h-96",
@@ -40,8 +39,8 @@ export function RecentWorkSection() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-heading text-white mb-4">Recent Work</h2>
-        <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-heading text-foreground mb-4">Recent Work</h2>
+        <p className="text-foreground/70 text-lg font-light max-w-xl mx-auto">
           A curated selection of our most recent luxury interior projects
         </p>
       </motion.div>
@@ -64,10 +63,10 @@ export function RecentWorkSection() {
               />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex flex-col items-end justify-end p-6 opacity-0 group-hover:opacity-100">
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex flex-col items-end justify-end p-6 opacity-0 group-hover:opacity-100">
                 <div className="text-right">
-                  <p className="text-white font-heading text-lg">{work.title}</p>
-                  <p className="text-white/80 text-sm">{work.location}</p>
+                  <p className="text-background font-heading text-lg">{work.title}</p>
+                  <p className="text-background/80 text-sm">{work.location}</p>
                 </div>
               </div>
             </div>
@@ -84,7 +83,7 @@ export function RecentWorkSection() {
       >
         <Link 
           href="/projects"
-          className="px-8 py-4 border border-white/20 text-white text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-black transition-all rounded-full"
+          className="px-8 py-4 border border-foreground/20 text-foreground text-sm uppercase tracking-widest font-medium hover:bg-foreground hover:text-background transition-all rounded-full"
         >
           View Full Portfolio
         </Link>

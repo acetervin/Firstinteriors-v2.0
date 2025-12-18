@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Logo } from "./Logo";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -38,14 +39,17 @@ export function Navbar() {
       )}
     >
       {/* Logo */}
-      <Link href="/">
-        <a className="text-sm md:text-2xl font-heading font-light tracking-tight text-foreground flex-shrink-0">
-          First Interior
-        </a>
-      </Link>
+      <Logo />
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-8 ml-auto">
+        {location !== "/" && (
+          <Link href="/">
+            <a className="text-sm tracking-widest uppercase hover:text-primary transition-colors text-foreground/70">
+              Home
+            </a>
+          </Link>
+        )}
         {navItems.map((item) => (
           <Link key={item.href} href={item.href}>
             <a
@@ -113,6 +117,16 @@ export function Navbar() {
 
             {/* Menu items */}
             <div className="space-y-4">
+              {location !== "/" && (
+                <Link href="/">
+                  <a
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-sm tracking-widest uppercase hover:text-primary transition-colors block text-foreground/70"
+                  >
+                    Home
+                  </a>
+                </Link>
+              )}
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <a

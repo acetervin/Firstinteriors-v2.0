@@ -33,23 +33,23 @@ export function ContactForm() {
           className="space-y-12"
         >
           <div>
-            <h2 className="text-5xl md:text-6xl font-heading text-white mb-4 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-heading text-foreground mb-4 leading-tight">
               Let's discuss your project.
             </h2>
-            <p className="text-white/60 text-lg font-light">
+            <p className="text-foreground/60 text-lg font-light">
               We are currently accepting new projects for {currentYear}.
             </p>
           </div>
 
           {/* Contact Details */}
-          <div className="space-y-8 border-t border-white/10 pt-12">
+          <div className="space-y-8 border-t border-foreground/10 pt-12">
             <div className="flex gap-6 group">
               <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</p>
+                <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Email</p>
                 <a
                   href="mailto:hello@firstinteriordesigns.ke"
-                  className="text-white hover:text-primary transition-colors"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
                   hello@firstinteriordesigns.ke
                 </a>
@@ -59,10 +59,10 @@ export function ContactForm() {
             <div className="flex gap-6 group">
               <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Phone</p>
+                <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Phone</p>
                 <a
                   href="tel:+254712345678"
-                  className="text-white hover:text-primary transition-colors"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
                   +254 (0) 712 345 678
                 </a>
@@ -72,8 +72,8 @@ export function ContactForm() {
             <div className="flex gap-6 group">
               <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Office</p>
-                <p className="text-white">
+                <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Office</p>
+                <p className="text-foreground">
                   Westlands, Nairobi<br />Kenya
                 </p>
               </div>
@@ -92,7 +92,7 @@ export function ContactForm() {
         >
           {/* Name */}
           <div>
-            <label className="text-white/60 text-xs uppercase tracking-widest block mb-3">
+            <label className="text-foreground/60 text-xs uppercase tracking-widest block mb-3">
               Your Name
             </label>
             <input
@@ -100,14 +100,14 @@ export function ContactForm() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder:text-white/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
+              className="w-full bg-transparent border-b border-foreground/20 text-foreground placeholder:text-foreground/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
               placeholder="Enter your name"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="text-white/60 text-xs uppercase tracking-widest block mb-3">
+            <label className="text-foreground/60 text-xs uppercase tracking-widest block mb-3">
               Email Address
             </label>
             <input
@@ -115,52 +115,52 @@ export function ContactForm() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder:text-white/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
+              className="w-full bg-transparent border-b border-foreground/20 text-foreground placeholder:text-foreground/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
               placeholder="your@email.com"
             />
           </div>
 
           {/* Project Type */}
           <div>
-            <label className="text-white/60 text-xs uppercase tracking-widest block mb-3">
+            <label className="text-foreground/60 text-xs uppercase tracking-widest block mb-3">
               Project Type
             </label>
             <select
               value={formData.projectType}
               onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-              className="w-full bg-transparent border-b border-white/20 text-white pb-3 focus:outline-none focus:border-primary transition-colors font-light appearance-none cursor-pointer"
+              className="w-full bg-transparent border-b border-foreground/20 text-foreground pb-3 focus:outline-none focus:border-primary transition-colors font-light appearance-none cursor-pointer"
             >
-              <option value="renovation" className="bg-background text-white">Renovation</option>
-              <option value="new-build" className="bg-background text-white">New Build</option>
-              <option value="commercial" className="bg-background text-white">Commercial</option>
-              <option value="consultation" className="bg-background text-white">Consultation</option>
+              <option value="renovation" className="bg-background text-foreground">Renovation</option>
+              <option value="new-build" className="bg-background text-foreground">New Build</option>
+              <option value="commercial" className="bg-background text-foreground">Commercial</option>
+              <option value="consultation" className="bg-background text-foreground">Consultation</option>
             </select>
           </div>
 
           {/* Budget */}
           <div>
-            <label className="text-white/60 text-xs uppercase tracking-widest block mb-3">
+            <label className="text-foreground/60 text-xs uppercase tracking-widest block mb-3">
               Estimated Budget
             </label>
             <input
               type="text"
               value={formData.budget}
               onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder:text-white/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
+              className="w-full bg-transparent border-b border-foreground/20 text-foreground placeholder:text-foreground/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light"
               placeholder="e.g., KES 5M - 10M"
             />
           </div>
 
           {/* Message */}
           <div>
-            <label className="text-white/60 text-xs uppercase tracking-widest block mb-3">
+            <label className="text-foreground/60 text-xs uppercase tracking-widest block mb-3">
               Project Details
             </label>
             <textarea
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder:text-white/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light resize-none h-32"
+              className="w-full bg-transparent border-b border-foreground/20 text-foreground placeholder:text-foreground/30 pb-3 focus:outline-none focus:border-primary transition-colors font-light resize-none h-32"
               placeholder="Tell us about your project vision..."
             />
           </div>
@@ -169,7 +169,7 @@ export function ContactForm() {
           <div className="pt-6">
             <button
               type="submit"
-              className="w-full bg-white text-black py-4 text-sm uppercase tracking-widest font-medium hover:scale-105 transition-transform duration-300 active:scale-95"
+              className="w-full bg-primary text-background py-4 text-sm uppercase tracking-widest font-medium hover:scale-105 transition-transform duration-300 active:scale-95"
             >
               {submitted ? "Message Sent ✓" : "Send Inquiry"}
             </button>
