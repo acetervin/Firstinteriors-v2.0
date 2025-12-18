@@ -73,7 +73,7 @@ export default function Projects() {
     <div className="flex flex-col bg-background min-h-screen">
       <Navbar />
       
-      <div className="flex-1 flex pt-20 relative overflow-hidden">
+      <div className="flex flex-1 pt-20 relative overflow-hidden">
         {/* Desktop Sidebar - Hidden on mobile */}
         <div className="hidden md:block w-80 h-full overflow-y-auto">
           <ProjectSidebar projects={projects} selectedId={selectedProject.id} />
@@ -100,9 +100,11 @@ export default function Projects() {
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto relative">
           <ProjectDetail project={selectedProject} />
-          <Footer />
         </main>
       </div>
+
+      {/* Footer - Full width at bottom */}
+      <Footer />
     </div>
   );
 }
