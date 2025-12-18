@@ -1,20 +1,40 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Project, projects } from "@/lib/data";
+import { Project, getProjects } from "@/lib/data";
 import { ProjectDock } from "./ProjectDock";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export function Hero() {
-  const [activeProject, setActiveProject] = useState<Project>(projects[0]);
-  const [prevProject, setPrevProject] = useState<Project>(projects[0]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  // Handle project change
+  useEffect(() => {
+    const loadProjects = async () => {
+      const data = await getProjects();
+      setProjects(data);
+      if (data.length > 0) {
+        setActiveProject(data[0]);
+      }
+      setLoading(false);
+    };
+
+    loadProjects();
+  }, []);
+
   const handleProjectChange = (project: Project) => {
-    if (project.id === activeProject.id) return;
-    setPrevProject(activeProject);
+    if (project.id === activeProject?.id) return;
     setActiveProject(project);
   };
+
+  if (loading || !activeProject) {
+    return (
+      <div className="relative w-full h-screen overflow-hidden bg-background flex items-center justify-center">
+        <div className="text-white/40">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-background">
@@ -24,7 +44,7 @@ export function Hero() {
           key={activeProject.id}
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }} // Crossfade
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
           className="absolute inset-0 z-0"
         >
@@ -96,11 +116,13 @@ export function Hero() {
       </div>
 
       {/* Project Dock (Bottom Right) */}
-      <ProjectDock 
-        projects={projects} 
-        activeProject={activeProject} 
-        onSelect={handleProjectChange} 
-      />
+      {projects.length > 0 && (
+        <ProjectDock 
+          projects={projects} 
+          activeProject={activeProject} 
+          onSelect={handleProjectChange} 
+        />
+      )}
     </div>
   );
 }

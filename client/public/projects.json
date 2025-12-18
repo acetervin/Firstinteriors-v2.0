@@ -1,0 +1,121 @@
+[
+  {
+    "id": "penthouse-sky",
+    "title": "The Azure Penthouse",
+    "category": "Residential",
+    "description": "A crowning jewel atop the city skyline, this penthouse blends modern sophistication with panoramic views. The design philosophy centers on 'floating above the noise', utilizing floor-to-ceiling glass and low-profile furnishings to maintain an unbroken connection with the horizon.",
+    "location": "Nairobi, Kenya",
+    "year": "2024",
+    "value": "KES 25M",
+    "timeline": "14 Months",
+    "image": "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
+    "gallery": [
+      {
+        "category": "Living Room",
+        "images": [
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+        ]
+      },
+      {
+        "category": "Kitchen",
+        "images": [
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+        ]
+      },
+      {
+        "category": "Details",
+        "images": [
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coastal-calm",
+    "title": "Serenity Bay Villa",
+    "category": "Vacation Home",
+    "description": "Where the ocean meets architecture. This coastal residence uses a palette of bleached woods, travertine, and linen to echo the surrounding dunes. The open-plan layout invites the sea breeze into every corner of the home.",
+    "location": "Malibu, CA",
+    "year": "2023",
+    "value": "KES 18M",
+    "timeline": "18 Months",
+    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
+    "gallery": [
+      {
+        "category": "Living Room",
+        "images": [
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+        ]
+      },
+      {
+        "category": "Outdoor",
+        "images": [
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "industrial-loft",
+    "title": "Ironworks Lofts",
+    "category": "Restoration",
+    "description": "Reimagining a 1920s textile factory into a contemporary living space. We preserved the original brickwork and steel beams while introducing warm leather textures and smart home technology to bridge the gap between past and future.",
+    "location": "Westlands, Nairobi",
+    "year": "2023",
+    "value": "KES 12M",
+    "timeline": "9 Months",
+    "image": "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+    "gallery": [
+      {
+        "category": "Main Hall",
+        "images": [
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+        ]
+      },
+      {
+        "category": "Workspace",
+        "images": [
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zen-retreat",
+    "title": "Kiso Mountain Lodge",
+    "category": "Hospitality",
+    "description": "A sanctuary of silence in the deep forest. This retreat draws inspiration from traditional Japanese architecture, featuring charred cedar siding and stone hearths. Every window frames a specific view of the natural landscape.",
+    "location": "Nagano, Japan",
+    "year": "2025",
+    "value": "KES 35M",
+    "timeline": "24 Months",
+    "image": "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+    "gallery": [
+      {
+        "category": "Exterior",
+        "images": [
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+        ]
+      },
+      {
+        "category": "Interiors",
+        "images": [
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+        ]
+      }
+    ]
+  }
+]

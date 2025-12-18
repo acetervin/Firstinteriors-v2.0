@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { ProjectSidebar } from "@/components/project/ProjectSidebar";
 import { ProjectDetail } from "@/components/project/ProjectDetail";
-import { projects } from "@/lib/data";
+import { getProjects, Project } from "@/lib/data";
 import { useLocation, useSearch } from "wouter";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -14,13 +14,59 @@ export default function Projects() {
   const selectedId = queryParams.get("id");
   
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  const selectedProject = projects.find(p => p.id === selectedId) || projects[0];
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const data = await getProjects();
+        
+        if (!data || data.length === 0) {
+          setError(true);
+          setLoading(false);
+          return;
+        }
+        
+        setProjects(data);
+        
+        const project = selectedId 
+          ? data.find(p => p.id === selectedId) 
+          : data[0];
+        
+        setSelectedProject(project || data[0]);
+        setLoading(false);
+      } catch (err) {
+        console.error('Failed to load projects:', err);
+        setError(true);
+        setLoading(false);
+      }
+    };
 
-  // Close mobile menu when selection changes
+    loadProjects();
+  }, [selectedId]);
+
   useEffect(() => {
     setIsMobileOpen(false);
   }, [selectedId]);
+
+  if (loading) {
+    return (
+      <div className="h-screen flex flex-col bg-background overflow-hidden items-center justify-center">
+        <div className="text-white/40">Loading projects...</div>
+      </div>
+    );
+  }
+
+  if (error || !selectedProject) {
+    return (
+      <div className="h-screen flex flex-col bg-background overflow-hidden items-center justify-center">
+        <div className="text-white/40">Failed to load projects. Please try again.</div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-screen flex flex-col bg-background overflow-hidden">

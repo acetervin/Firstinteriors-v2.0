@@ -1,20 +1,36 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import penthouseImg from '@assets/generated_images/luxury_penthouse_living_room.png';
-import villaImg from '@assets/generated_images/coastal_villa_interior.png';
-import loftImg from '@assets/generated_images/industrial_loft_interior.png';
-import retreatImg from '@assets/generated_images/zen_minimalist_retreat.png';
-
-const recentWorks = [
-  { id: 1, title: "The Azure Penthouse", location: "New York, NY", image: penthouseImg, height: "h-80" },
-  { id: 2, title: "Serenity Bay Villa", location: "Malibu, CA", image: villaImg, height: "h-96" },
-  { id: 3, title: "Ironworks Lofts", location: "Chicago, IL", image: loftImg, height: "h-80" },
-  { id: 4, title: "Kiso Mountain Lodge", location: "Nagano, Japan", image: retreatImg, height: "h-96" },
-  { id: 5, title: "The Azure Penthouse", location: "New York, NY", image: penthouseImg, height: "h-80" },
-  { id: 6, title: "Serenity Bay Villa", location: "Malibu, CA", image: villaImg, height: "h-96" },
-];
+import { useEffect, useState } from "react";
+import { Project, getProjects } from "@/lib/data";
 
 export function RecentWorkSection() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      const data = await getProjects();
+      setProjects(data);
+      setLoading(false);
+    };
+
+    loadProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-24 px-6 md:px-20 container mx-auto">
+        <div className="text-white/40 text-center">Loading projects...</div>
+      </section>
+    );
+  }
+
+  // Create varied heights for masonry effect
+  const recentWorks = projects.map((project, idx) => ({
+    ...project,
+    height: idx % 2 === 0 ? "h-80" : "h-96",
+  }));
+
   return (
     <section className="py-24 px-6 md:px-20 container mx-auto">
       <motion.div
@@ -33,7 +49,7 @@ export function RecentWorkSection() {
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {recentWorks.map((work, idx) => (
           <motion.div
-            key={idx}
+            key={work.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
