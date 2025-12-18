@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import penthouseImg from '@assets/generated_images/luxury_penthouse_living_room.png';
 
 export function AboutSection() {
   return (
@@ -14,7 +13,7 @@ export function AboutSection() {
           className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden"
         >
           <img
-            src={penthouseImg}
+            src="https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
             alt="Interior Design Detail"
             className="w-full h-full object-cover"
           />

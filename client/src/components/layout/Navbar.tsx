@@ -28,8 +28,10 @@ export function Navbar() {
         scrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent"
       )}
     >
-      <Link href="/" className="text-lg md:text-2xl font-heading font-light tracking-tight text-white uppercase z-50 relative">
-        First Interior
+      <Link href="/">
+        <a className="text-lg md:text-2xl font-heading font-light tracking-tight text-white uppercase">
+          First Interior
+        </a>
       </Link>
 
       {/* Desktop Navigation */}
@@ -57,7 +59,7 @@ export function Navbar() {
       {/* Mobile Menu Toggle */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden text-white/70 hover:text-white transition-colors z-50"
+        className="md:hidden text-white/70 hover:text-white transition-colors relative z-50"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -65,7 +67,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-white/5 md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-white/5 md:hidden z-40">
           <div className="flex flex-col p-6 space-y-4">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
