@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { ProjectSidebar } from "@/components/project/ProjectSidebar";
 import { ProjectDetail } from "@/components/project/ProjectDetail";
-import { ProjectFooter } from "@/components/project/ProjectFooter";
+import { Footer } from "@/components/home/Footer";
 import { getProjects, Project } from "@/lib/data";
 import { useLocation, useSearch } from "wouter";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
@@ -100,7 +100,7 @@ export default function Projects() {
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto relative">
           <ProjectDetail project={selectedProject} />
-          <ProjectFooter />
+          <Footer />
         </main>
       </div>
     </div>
