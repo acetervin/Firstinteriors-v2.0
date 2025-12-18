@@ -53,7 +53,7 @@
 }
 
 :root {
-  /* Warm Light Theme */
+  /* Warm Light Theme (Default) */
   --background: 40 20% 96%;
   --foreground: 25 25% 20%;
 
@@ -93,6 +93,47 @@
   --sidebar-ring: 15 70% 52%;
 }
 
+.dark {
+  /* Dark Luxury Theme */
+  --background: 240 5% 6%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 4% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 5% 6%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Elegant Gold/Bronze Accent */
+  --primary: 45 30% 60%;
+  --primary-foreground: 240 5% 6%;
+
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 65%;
+
+  --accent: 240 4% 16%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --ring: 45 30% 60%;
+
+  --sidebar: 240 5% 6%;
+  --sidebar-foreground: 240 5% 70%;
+  --sidebar-primary: 45 30% 60%;
+  --sidebar-primary-foreground: 240 5% 6%;
+  --sidebar-accent: 240 4% 16%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 240 4% 16%;
+  --sidebar-ring: 45 30% 60%;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -113,11 +154,25 @@
     border: 1px solid rgba(210, 140, 100, 0.2);
   }
   
+  .dark .glass {
+    background: rgba(18, 18, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
   .glass-light {
     background: rgba(255, 250, 240, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(210, 140, 100, 0.3);
+  }
+
+  .dark .glass-light {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .text-balance {

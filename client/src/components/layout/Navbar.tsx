@@ -1,12 +1,19 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function Navbar() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +27,8 @@ export function Navbar() {
     { label: "Work", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ];
+
+  if (!mounted) return null;
 
   return (
     <nav
@@ -55,16 +64,45 @@ export function Navbar() {
         >
           Inquire
         </a>
+
+        {/* Theme Toggle */}
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 hover:bg-foreground/10 rounded-full transition-colors"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Sun className="w-5 h-5 text-foreground" />
+          ) : (
+            <Moon className="w-5 h-5 text-foreground" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile Menu Toggle */}
-      <button
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden text-foreground/70 hover:text-foreground transition-colors ml-auto flex-shrink-0"
-        aria-label="Toggle menu"
-      >
-        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
+      {/* Mobile Menu Toggle & Theme */}
+      <div className="md:hidden flex items-center gap-3 ml-auto">
+        {/* Theme Toggle */}
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 hover:bg-foreground/10 rounded-full transition-colors flex-shrink-0"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Sun className="w-5 h-5 text-foreground" />
+          ) : (
+            <Moon className="w-5 h-5 text-foreground" />
+          )}
+        </button>
+
+        {/* Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="text-foreground/70 hover:text-foreground transition-colors flex-shrink-0"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
 
       {/* Mobile Navigation Sidebar */}
       {mobileMenuOpen && (
