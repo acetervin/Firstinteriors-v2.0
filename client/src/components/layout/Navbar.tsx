@@ -29,13 +29,13 @@ export function Navbar() {
       )}
     >
       <Link href="/">
-        <a className="text-lg md:text-2xl font-heading font-light tracking-tight text-white uppercase">
+        <a className="text-sm md:text-2xl font-heading font-light tracking-tight text-white uppercase flex-shrink-0">
           First Interior
         </a>
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-8 ml-auto">
         {navItems.map((item) => (
           <Link key={item.href} href={item.href}>
             <a
@@ -56,10 +56,10 @@ export function Navbar() {
         </a>
       </div>
 
-      {/* Mobile Menu Toggle */}
+      {/* Mobile Menu Toggle - Right aligned */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden text-white/70 hover:text-white transition-colors relative z-50"
+        className="md:hidden text-white/70 hover:text-white transition-colors ml-auto flex-shrink-0"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
