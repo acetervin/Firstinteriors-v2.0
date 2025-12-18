@@ -22,9 +22,9 @@ export const projects: Project[] = [
     title: "The Azure Penthouse",
     category: "Residential",
     description: "A crowning jewel atop the city skyline, this penthouse blends modern sophistication with panoramic views. The design philosophy centers on 'floating above the noise', utilizing floor-to-ceiling glass and low-profile furnishings to maintain an unbroken connection with the horizon.",
-    location: "New York, NY",
+    location: "Nairobi, Kenya",
     year: "2024",
-    value: "$12.5M",
+    value: "KES 25M",
     timeline: "14 Months",
     image: penthouseImg,
     gallery: [
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description: "Where the ocean meets architecture. This coastal residence uses a palette of bleached woods, travertine, and linen to echo the surrounding dunes. The open-plan layout invites the sea breeze into every corner of the home.",
     location: "Malibu, CA",
     year: "2023",
-    value: "$8.2M",
+    value: "KES 18M",
     timeline: "18 Months",
     image: villaImg,
     gallery: [
@@ -53,9 +53,9 @@ export const projects: Project[] = [
     title: "Ironworks Lofts",
     category: "Restoration",
     description: "Reimagining a 1920s textile factory into a contemporary living space. We preserved the original brickwork and steel beams while introducing warm leather textures and smart home technology to bridge the gap between past and future.",
-    location: "Chicago, IL",
+    location: "Westlands, Nairobi",
     year: "2023",
-    value: "$4.1M",
+    value: "KES 12M",
     timeline: "9 Months",
     image: loftImg,
     gallery: [
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     description: "A sanctuary of silence in the deep forest. This retreat draws inspiration from traditional Japanese architecture, featuring charred cedar siding and stone hearths. Every window frames a specific view of the natural landscape.",
     location: "Nagano, Japan",
     year: "2025",
-    value: "$15.0M",
+    value: "KES 35M",
     timeline: "24 Months",
     image: retreatImg,
     gallery: [

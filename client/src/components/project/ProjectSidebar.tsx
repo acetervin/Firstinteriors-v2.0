@@ -13,7 +13,7 @@ export function ProjectSidebar({ projects, selectedId }: ProjectSidebarProps) {
     <div className="w-full h-full bg-sidebar border-r border-white/5 flex flex-col">
       <div className="p-8 border-b border-white/5">
         <h2 className="text-xs uppercase tracking-[0.2em] text-white/40 font-medium">
-          Portfolio Index
+          Our Projects
         </h2>
       </div>
       
@@ -51,7 +51,7 @@ export function ProjectSidebar({ projects, selectedId }: ProjectSidebarProps) {
 
       <div className="p-8 border-t border-white/5">
         <p className="text-[10px] text-white/20 uppercase tracking-widest text-center">
-          © 2024 Lumière Design
+          © 2024 First Interior Designs
         </p>
       </div>
     </div>
