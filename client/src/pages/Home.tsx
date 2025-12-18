@@ -3,6 +3,7 @@ import { Hero } from "@/components/project/Hero";
 import { AboutSection } from "@/components/home/AboutSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { RecentWorkSection } from "@/components/home/RecentWorkSection";
+import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { Footer } from "@/components/home/Footer";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ServicesSection />
+      <TestimonialSection />
       <RecentWorkSection />
       <Footer />
     </div>

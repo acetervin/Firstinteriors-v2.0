@@ -28,9 +28,9 @@ export function Navbar() {
         scrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent"
       )}
     >
-      {/* Logo - Hidden on mobile */}
+      {/* Logo */}
       <Link href="/">
-        <a className="hidden md:block text-lg md:text-2xl font-heading font-light tracking-tight text-white uppercase">
+        <a className="text-sm md:text-2xl font-heading font-light tracking-tight text-white uppercase flex-shrink-0">
           First Interior
         </a>
       </Link>
@@ -60,7 +60,7 @@ export function Navbar() {
       {/* Mobile Menu Toggle */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden text-white/70 hover:text-white transition-colors ml-auto"
+        className="md:hidden text-white/70 hover:text-white transition-colors ml-auto flex-shrink-0"
         aria-label="Toggle menu"
       >
         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -70,13 +70,6 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-white/5 md:hidden z-40">
           <div className="flex flex-col p-6 space-y-6">
-            {/* Logo inside sidebar */}
-            <Link href="/">
-              <a onClick={() => setMobileMenuOpen(false)} className="text-lg font-heading font-light tracking-tight text-white uppercase">
-                First Interior
-              </a>
-            </Link>
-
             {/* Divider */}
             <div className="border-t border-white/10" />
 
