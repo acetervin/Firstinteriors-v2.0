@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function AboutSection() {
   return (
-    <section className="py-24 px-6 md:px-20 container mx-auto">
+    <section className="py-24 px-6 md:px-20 container mx-auto overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Image - Left */}
         <motion.div

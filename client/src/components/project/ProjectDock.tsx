@@ -12,7 +12,7 @@ export function ProjectDock({ projects, activeProject, onSelect }: ProjectDockPr
   return (
     <div className="absolute bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-20 flex flex-col items-center md:items-end gap-4">
       <span className="text-[10px] uppercase tracking-widest text-foreground/40 mb-2 mr-1 hidden md:block">Select Project</span>
-      <div className="flex gap-3 glass p-2 rounded-2xl overflow-x-auto max-w-full no-scrollbar">
+      <div className="flex gap-3 glass p-2 rounded-2xl overflow-x-hidden max-w-full justify-center flex-wrap">
         {projects.map((project) => (
           <button
             key={project.id}
