@@ -3,6 +3,16 @@ import { Mail, Instagram, Linkedin } from "lucide-react";
 import { Link } from "wouter";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+  
+  // Calculate date 2 months ago
+  const updatedDate = new Date();
+  updatedDate.setMonth(updatedDate.getMonth() - 2);
+  const formattedUpdateDate = updatedDate.toLocaleDateString('en-US', { 
+    month: 'long', 
+    year: 'numeric' 
+  });
+
   return (
     <footer className="bg-secondary text-foreground">
       <section className="py-24 px-6 md:px-20 container mx-auto">
@@ -46,16 +56,13 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-foreground/10 py-8 px-6 md:px-20">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-foreground/60 text-sm gap-4">
-          <p>© 2024 First Interior Designs, Nairobi. All rights reserved.</p>
+          <p>© {currentYear} First Interior Designs. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy">
               <a className="hover:text-foreground transition-colors">Privacy</a>
             </Link>
             <Link href="/terms">
               <a className="hover:text-foreground transition-colors">Terms</a>
-            </Link>
-            <Link href="/credits">
-              <a className="hover:text-foreground transition-colors">Credits</a>
             </Link>
           </div>
         </div>

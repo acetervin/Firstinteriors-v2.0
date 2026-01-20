@@ -3,6 +3,14 @@ import { Footer } from "@/components/home/Footer";
 import { motion } from "framer-motion";
 
 export default function Privacy() {
+  // Calculate date 2 months ago
+  const updatedDate = new Date();
+  updatedDate.setMonth(updatedDate.getMonth() - 2);
+  const formattedUpdateDate = updatedDate.toLocaleDateString('en-US', { 
+    month: 'long', 
+    year: 'numeric' 
+  });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -16,7 +24,7 @@ export default function Privacy() {
           
           <div className="prose prose-invert max-w-none space-y-6 text-foreground/80 font-light">
             <p>
-              Last updated: December 2024
+              Last updated: {formattedUpdateDate}
             </p>
 
             <section>
