@@ -39,7 +39,7 @@ export function Hero() {
   }
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-background">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-background">
       {/* Background Image Transition Layer */}
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
@@ -61,7 +61,7 @@ export function Hero() {
       </AnimatePresence>
 
       {/* Main Content Area */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-32 pt-24 px-6 md:px-20 container mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32 pt-24 px-6 md:px-20 container mx-auto">
         <div className="max-w-4xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -75,8 +75,8 @@ export function Hero() {
                 <span className="text-primary text-sm font-medium tracking-widest uppercase">
                   {activeProject.category}
                 </span>
-                <span className="w-12 h-[1px] bg-foreground/30"></span>
-                <span className="text-foreground/70 text-sm font-light tracking-widest">
+                <span className="w-12 h-[1px] bg-foreground/30 hidden md:block"></span>
+                <span className="text-foreground/70 text-sm font-light tracking-widest hidden md:block">
                   {activeProject.location}
                 </span>
               </div>
@@ -85,25 +85,28 @@ export function Hero() {
                 {activeProject.title}
               </h1>
 
-              <p className="text-foreground/80 max-w-lg text-lg font-light leading-relaxed mb-10 text-balance">
+              <p className="text-foreground/80 max-w-lg text-lg font-light leading-relaxed mb-10 text-balance hidden md:block">
                 {activeProject.description}
               </p>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 border-t border-foreground/10 pt-8 max-w-2xl">
+              {/* Stats Grid - Hidden on mobile to save space, or kept if essential? User said "key project data" pushed down. 
+                  Let's keep it but maybe compact it or just hide description is enough. 
+                  Hiding description is the main request. 
+              */}
+              <div className="grid grid-cols-2 gap-8 mb-8 md:mb-10 border-t border-foreground/10 pt-6 md:pt-8 max-w-2xl">
                 <div>
                   <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Timeline</p>
-                  <p className="text-foreground text-xl font-heading">{activeProject.timeline}</p>
+                  <p className="text-foreground text-lg md:text-xl font-heading">{activeProject.timeline}</p>
                 </div>
                 <div>
                   <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Year</p>
-                  <p className="text-foreground text-xl font-heading">{activeProject.year}</p>
+                  <p className="text-foreground text-lg md:text-xl font-heading">{activeProject.year}</p>
                 </div>
               </div>
 
               <Link 
                 href={`/projects?id=${activeProject.id}`}
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-colors rounded-full text-sm font-medium tracking-widest uppercase"
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-colors rounded-full text-sm font-medium tracking-widest uppercase shadow-lg md:shadow-none"
               >
                 View Project
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
