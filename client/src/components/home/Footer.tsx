@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
-import { Mail, Instagram, Linkedin } from "lucide-react";
+import { Mail, Instagram, Linkedin, Sun, Moon } from "lucide-react";
 import { Link } from "wouter";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   // Calculate date 2 months ago
   const updatedDate = new Date();
@@ -57,13 +65,28 @@ export function Footer() {
       <div className="border-t border-foreground/10 py-8 px-6 md:px-20">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-foreground/60 text-sm gap-4">
           <p>© {currentYear} First Interior Designs. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <Link href="/privacy">
               <a className="hover:text-foreground transition-colors">Privacy</a>
             </Link>
             <Link href="/terms">
               <a className="hover:text-foreground transition-colors">Terms</a>
             </Link>
+            
+            {/* Theme Toggle */}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="hover:text-foreground transition-colors flex items-center gap-2"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>

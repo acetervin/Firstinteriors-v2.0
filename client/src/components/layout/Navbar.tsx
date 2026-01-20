@@ -1,8 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -10,7 +9,6 @@ export function Navbar() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -84,36 +82,10 @@ export function Navbar() {
           >
             Inquire
           </a>
-
-          {/* Theme Toggle */}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 hover:bg-foreground/10 rounded-full transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-foreground" />
-            ) : (
-              <Moon className="w-5 h-5 text-foreground" />
-            )}
-          </button>
         </div>
 
-        {/* Mobile Menu Toggle & Theme */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-3 ml-auto relative z-50">
-          {/* Theme Toggle */}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 hover:bg-foreground/10 rounded-full transition-colors flex-shrink-0"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-foreground" />
-            ) : (
-              <Moon className="w-5 h-5 text-foreground" />
-            )}
-          </button>
-
           {/* Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

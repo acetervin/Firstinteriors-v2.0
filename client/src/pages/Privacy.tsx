@@ -30,28 +30,52 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">1. Information We Collect</h2>
               <p>
-                We collect information you voluntarily provide through our contact forms, including your name, email address, phone number, and project details.
+                To provide tailored interior design services, we collect various types of information, including:
               </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Personal Information:</strong> Name, email address, phone number, and billing address.</li>
+                <li><strong>Property Details:</strong> Floor plans, blueprints, existing site photos, and property addresses.</li>
+                <li><strong>Project Preferences:</strong> Lifestyle requirements, design inspirations, budget estimates, and family needs relevant to the design process.</li>
+              </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">2. How We Use Your Information</h2>
               <p>
-                Your information is used solely to respond to your inquiries and provide interior design services. We do not share your information with third parties without your consent.
+                We use your information strictly to execute your interior design project. This includes creating design proposals, creating 3D visualizations, processing furniture and material orders, and coordinating deliveries to your site.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">3. Data Security</h2>
+              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">3. Sharing with Third Parties</h2>
               <p>
-                We implement appropriate security measures to protect your personal information. However, no method of transmission over the internet is 100% secure.
+                We value your privacy and do not sell your personal data. However, to execute your project, we may share necessary details (such as your delivery address and site contact number) with trusted third parties, including:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Contractors and tradespeople working on your site.</li>
+                <li>Furniture suppliers and logistics companies for product delivery.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">4. Visual Documentation</h2>
+              <p>
+                We may document the progress of your project through photography and video ("Before and After" shots). These images may be used in our portfolio, website, and social media to showcase our work. We ensure that these images do not reveal specific location data or compromise your security.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">4. Contact Us</h2>
+              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">5. Data Security</h2>
               <p>
-                For privacy concerns, please contact us at hello@firstinteriordesigns.ke
+                We implement appropriate security measures to protect your personal information, design files, and payment details from unauthorized access or disclosure.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-heading text-foreground mt-8 mb-4">6. Contact Us</h2>
+              <p>
+                For privacy concerns or to request the removal of your data, please contact us at:<br/>
+                <strong>Email:</strong> hello@firstinteriordesigns.ke
               </p>
             </section>
           </div>
