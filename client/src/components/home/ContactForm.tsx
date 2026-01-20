@@ -60,12 +60,20 @@ export function ContactForm() {
               <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Phone</p>
-                <a
-                  href="tel:+254712345678"
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  +254 (0) 712 345 678
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+254723851318"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    +254 (0) 723 851 318
+                  </a>
+                  <a
+                    href="tel:+254792404484"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    +254 (0) 792 404 484
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -74,7 +82,7 @@ export function ContactForm() {
               <div>
                 <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Office</p>
                 <p className="text-foreground">
-                  Westlands, Nairobi<br />Kenya
+                  Doonholm, Nairobi Kenya
                 </p>
               </div>
             </div>

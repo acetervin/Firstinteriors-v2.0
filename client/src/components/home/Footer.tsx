@@ -40,7 +40,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div className="flex gap-6 border-t border-foreground/10 pt-12 w-full justify-center">
-            <a href="#" className="text-foreground/60 hover:text-foreground transition-colors p-3 hover:bg-foreground/5 rounded-full">
+            <a href="https://www.instagram.com/firstinterior_" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground transition-colors p-3 hover:bg-foreground/5 rounded-full">
               <Instagram className="w-5 h-5" />
             </a>
             <a href="#" className="text-foreground/60 hover:text-foreground transition-colors p-3 hover:bg-foreground/5 rounded-full">
