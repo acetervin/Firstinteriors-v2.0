@@ -1,0 +1,19 @@
+# Allow search engines to crawl the site
+User-agent: *
+Allow: /
+Disallow: /node_modules
+Disallow: /.git
+Disallow: /.env*
+
+# Specific search engine rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (time between requests in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://firstinteriordesigns.ke/sitemap.xml
