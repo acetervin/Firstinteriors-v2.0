@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Logo } from "./Logo";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -24,6 +25,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = [
     { label: "Work", href: "/projects" },
     { label: "Contact", href: "/contact" },
@@ -32,96 +45,102 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-6 md:px-20 flex items-center justify-between",
-        scrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-foreground/10" : "bg-transparent"
-      )}
-    >
-      {/* Logo */}
-      <Logo />
-
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-8 ml-auto">
-        {location !== "/" && (
-          <Link href="/">
-            <a className="text-sm tracking-widest uppercase hover:text-primary transition-colors text-foreground/70">
-              Home
-            </a>
-          </Link>
+    <>
+      <nav
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-6 md:px-20 flex items-center justify-between",
+          scrolled || mobileMenuOpen ? "bg-background/80 backdrop-blur-md py-4 border-b border-foreground/10" : "bg-transparent"
         )}
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href}>
-            <a
-              className={cn(
-                "text-sm tracking-widest uppercase hover:text-primary transition-colors",
-                location === item.href ? "text-primary" : "text-foreground/70"
-              )}
-            >
-              {item.label}
-            </a>
-          </Link>
-        ))}
-        <a
-          href="mailto:hello@firstinteriordesigns.ke"
-          className="px-6 py-2 border border-foreground/20 text-foreground text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all rounded-full"
-        >
-          Inquire
-        </a>
+      >
+        {/* Logo */}
+        <div className="relative z-50">
+           <Logo />
+        </div>
 
-        {/* Theme Toggle */}
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 hover:bg-foreground/10 rounded-full transition-colors"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? (
-            <Sun className="w-5 h-5 text-foreground" />
-          ) : (
-            <Moon className="w-5 h-5 text-foreground" />
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8 ml-auto">
+          {location !== "/" && (
+            <Link href="/">
+              <a className="text-sm tracking-widest uppercase hover:text-primary transition-colors text-foreground/70">
+                Home
+              </a>
+            </Link>
           )}
-        </button>
-      </div>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href}>
+              <a
+                className={cn(
+                  "text-sm tracking-widest uppercase hover:text-primary transition-colors",
+                  location === item.href ? "text-primary" : "text-foreground/70"
+                )}
+              >
+                {item.label}
+              </a>
+            </Link>
+          ))}
+          <a
+            href="mailto:hello@firstinteriordesigns.ke"
+            className="px-6 py-2 border border-foreground/20 text-foreground text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all rounded-full"
+          >
+            Inquire
+          </a>
 
-      {/* Mobile Menu Toggle & Theme */}
-      <div className="md:hidden flex items-center gap-3 ml-auto">
-        {/* Theme Toggle */}
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 hover:bg-foreground/10 rounded-full transition-colors flex-shrink-0"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? (
-            <Sun className="w-5 h-5 text-foreground" />
-          ) : (
-            <Moon className="w-5 h-5 text-foreground" />
-          )}
-        </button>
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 hover:bg-foreground/10 rounded-full transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-foreground" />
+            ) : (
+              <Moon className="w-5 h-5 text-foreground" />
+            )}
+          </button>
+        </div>
 
-        {/* Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-foreground/70 hover:text-foreground transition-colors flex-shrink-0"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
+        {/* Mobile Menu Toggle & Theme */}
+        <div className="md:hidden flex items-center gap-3 ml-auto relative z-50">
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 hover:bg-foreground/10 rounded-full transition-colors flex-shrink-0"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-foreground" />
+            ) : (
+              <Moon className="w-5 h-5 text-foreground" />
+            )}
+          </button>
 
-      {/* Mobile Navigation Sidebar */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-foreground/10 md:hidden z-40">
-          <div className="flex flex-col p-6 space-y-6">
-            {/* Divider */}
-            <div className="border-t border-foreground/10" />
+          {/* Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-foreground hover:text-primary transition-colors flex-shrink-0"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </nav>
 
-            {/* Menu items */}
-            <div className="space-y-4">
+      {/* Full Screen Mobile Navigation Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center"
+          >
+            <div className="flex flex-col items-center space-y-8 p-6 w-full max-w-sm text-center">
               {location !== "/" && (
                 <Link href="/">
                   <a
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm tracking-widest uppercase hover:text-primary transition-colors block text-foreground/70"
+                    className="text-2xl font-heading tracking-tight hover:text-primary transition-colors block text-foreground"
                   >
                     Home
                   </a>
@@ -132,24 +151,33 @@ export function Navbar() {
                   <a
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
-                      "text-sm tracking-widest uppercase hover:text-primary transition-colors block",
-                      location === item.href ? "text-primary" : "text-foreground/70"
+                      "text-2xl font-heading tracking-tight hover:text-primary transition-colors block",
+                      location === item.href ? "text-primary" : "text-foreground"
                     )}
                   >
                     {item.label}
                   </a>
                 </Link>
               ))}
-              <a
-                href="mailto:hello@firstinteriordesigns.ke"
-                className="px-6 py-2 border border-foreground/20 text-foreground text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all rounded-full text-center block"
-              >
-                Inquire
-              </a>
+              
+              <div className="w-12 h-[1px] bg-foreground/10 my-4" />
+
+              <Link href="/contact">
+                <a
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full px-10 py-4 bg-primary text-background text-sm uppercase tracking-[0.2em] font-medium rounded-full hover:scale-105 transition-transform active:scale-95 text-center"
+                >
+                  Inquire
+                </a>
+              </Link>
+              
+               <div className="flex gap-6 mt-8">
+                  {/* Social placeholders or extra info could go here */}
+               </div>
             </div>
-          </div>
-        </div>
-      )}
-    </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
