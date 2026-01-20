@@ -13,7 +13,7 @@ export function AboutSection() {
           className="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden"
         >
           <img
-            src="https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+            src="https://media.joomeo.com/large/68a45f90b27a5.jpg"
             alt="Interior Design Detail"
             className="w-full h-full object-cover"
           />

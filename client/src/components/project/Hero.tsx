@@ -13,9 +13,11 @@ export function Hero() {
   useEffect(() => {
     const loadProjects = async () => {
       const data = await getProjects();
-      setProjects(data);
-      if (data.length > 0) {
-        setActiveProject(data[0]);
+      const featured = data.filter((p) => p.featured);
+      const list = featured.length > 0 ? featured : data;
+      setProjects(list);
+      if (list.length > 0) {
+        setActiveProject(list[0]);
       }
       setLoading(false);
     };
@@ -88,16 +90,12 @@ export function Hero() {
               </p>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10 border-t border-foreground/10 pt-8 max-w-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 border-t border-foreground/10 pt-8 max-w-2xl">
                 <div>
                   <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Timeline</p>
                   <p className="text-foreground text-xl font-heading">{activeProject.timeline}</p>
                 </div>
                 <div>
-                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Value</p>
-                  <p className="text-foreground text-xl font-heading">{activeProject.value}</p>
-                </div>
-                <div className="hidden md:block">
                   <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Year</p>
                   <p className="text-foreground text-xl font-heading">{activeProject.year}</p>
                 </div>

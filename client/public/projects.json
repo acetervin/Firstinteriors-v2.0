@@ -1,121 +1,287 @@
 [
   {
-    "id": "penthouse-sky",
-    "title": "The Azure Penthouse",
+    "id": "Project-sky",
+    "title": "The Karen Townhouse",
     "category": "Residential",
     "description": "A crowning jewel atop the city skyline, this penthouse blends modern sophistication with panoramic views. The design philosophy centers on 'floating above the noise', utilizing floor-to-ceiling glass and low-profile furnishings to maintain an unbroken connection with the horizon.",
-    "location": "Nairobi, Kenya",
-    "year": "2024",
+    "location": "Karen, Nairobi, Kenya",
+    "year": "2025",
     "timeline": "14 Months",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
+    "recent": true,
+    "image": "https://media.joomeo.com/large/68a46155c0810.jpg",
     "gallery": [
-      {
+            {
         "category": "Living Room",
         "images": [
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/6943fda84bbc5.jpg",
+          "https://media.joomeo.com/large/6943fdc255829.jpg",
+          "https://media.joomeo.com/large/6943fdd49a132.jpg"
         ]
       },
+
       {
         "category": "Kitchen",
         "images": [
-          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/68a460ea0fb0c.jpg",
+          "https://media.joomeo.com/large/68a4611b72a6f.jpg",
+          "https://media.joomeo.com/large/68a4612d1f1d6.jpg",
+          "https://media.joomeo.com/large/68a46141800eb.jpg",
+          "https://media.joomeo.com/large/68a4617557c85.jpg"
+
+        ]
+      },
+
+      {
+        "category": "Stairs",
+        "images": [
+          "https://media.joomeo.com/large/6943fe4d23b49.jpg",
+          "https://media.joomeo.com/large/6943fea86b34d.jpg",
+          "https://media.joomeo.com/large/68a45f1dcef33.jpg"
         ]
       },
       {
-        "category": "Details",
+        "category": "Wardrobes",
         "images": [
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/6943ff17b74c9.jpg",
+          "https://media.joomeo.com/large/6943ff3d654c2.jpg",
+          "https://media.joomeo.com/large/6943ff61ecf1c.jpg",
+          "https://media.joomeo.com/large/6943ff980c968.jpg",
+          "https://media.joomeo.com/large/6943ffa701c2a.jpg",
+          "https://media.joomeo.com/large/69440007f10e7.jpg"
+
+        ]
+      },
+      {
+        "category": "Bathrooms",
+        "images": [
+          "https://media.joomeo.com/large/68a45e070df89.jpg",
+          "https://media.joomeo.com/large/68a45e83e550f.jpg",
+          "https://media.joomeo.com/large/68a45e9fceb8e.jpg",
+          "https://media.joomeo.com/large/68a45f36d7391.jpg",
+          "https://media.joomeo.com/large/68a45f706071a.jpg",
+          "https://media.joomeo.com/large/68a45fd69d9c5.jpg",
+          "https://media.joomeo.com/large/68a4604c0aa25.jpg",
+          "https://media.joomeo.com/large/6943c9105f47a.jpg"
+        ]
+      },
+      {
+        "category": "Other Spaces",
+        "images": [
+          "https://media.joomeo.com/large/68a46155c0810.jpg",
+          "https://media.joomeo.com/large/68a46ecc4c78d.jpg",
+          "https://media.joomeo.com/large/6943fe9ab7a75.jpg",
+          "https://media.joomeo.com/large/6943feb965371.jpg",
+          "https://media.joomeo.com/large/68a4609caa1c5.jpg",
+          "https://media.joomeo.com/large/6943fef11bc83.jpg",
+          "https://media.joomeo.com/large/6943ff50065cc.jpg",
+          "https://media.joomeo.com/large/6943ff6f3a02a.jpg",
+          "https://media.joomeo.com/large/6943ffe04064a.jpg",
+          "https://media.joomeo.com/large/68a45f90b27a5.jpg",
+          "https://media.joomeo.com/large/6944027c60e56.jpg"
         ]
       }
     ]
   },
   {
-    "id": "coastal-calm",
-    "title": "Serenity Bay Villa",
-    "category": "Vacation Home",
+    "id": "Project-calm",
+    "title": "Mansion House Nairobi",
+    "category": "Residential",
     "description": "Where the ocean meets architecture. This coastal residence uses a palette of bleached woods, travertine, and linen to echo the surrounding dunes. The open-plan layout invites the sea breeze into every corner of the home.",
-    "location": "Malibu, CA",
-    "year": "2023",
+    "location": "Nairobi, Kenya",
+    "year": "2025",
     "timeline": "18 Months",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
+    "recent": true,
+    "image": "https://media.joomeo.com/large/694377e8212ed.jpg",
     "gallery": [
+      
       {
-        "category": "Living Room",
+        "category": "Kitchen",
         "images": [
-          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/694434e876c60.jpg",
+          "https://media.joomeo.com/large/68fa466d3f0e7.jpg",
+          "https://media.joomeo.com/large/694377e8212ed.jpg",
+          "https://media.joomeo.com/large/68fa4681047c0.jpg"
         ]
       },
       {
-        "category": "Outdoor",
+        "category": "Wardrobes",
         "images": [
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+
+          "https://media.joomeo.com/large/68fa50a3d07a7.jpg",
+          "https://media.joomeo.com/large/68fa50b121ce1.jpg"
+        ]
+      },
+      {
+        "category": "Other Spaces",
+        "images": [
+          "https://media.joomeo.com/large/694434d0e5ae1.jpg",
+          "https://media.joomeo.com/large/6944352832a07.jpg",
+          "https://media.joomeo.com/large/694435379e439.jpg",
+          "https://media.joomeo.com/large/68fa6133b1211.jpg"
         ]
       }
     ]
   },
   {
-    "id": "industrial-loft",
-    "title": "Ironworks Lofts",
-    "category": "Restoration",
+    "id": "Project-loft",
+    "title": "Mansion House Nairobi",
+    "category": "Residential",
     "description": "Reimagining a 1920s textile factory into a contemporary living space. We preserved the original brickwork and steel beams while introducing warm leather textures and smart home technology to bridge the gap between past and future.",
     "location": "Westlands, Nairobi",
-    "year": "2023",
+    "year": "2025",
     "timeline": "9 Months",
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+    "recent": false,
+    "image": "https://media.joomeo.com/large/68d65a686c50a.jpg",
     "gallery": [
       {
-        "category": "Main Hall",
+        "category": "Kitchen",
         "images": [
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/68d65a686c50a.jpg",
+          "https://media.joomeo.com/large/68d65ab804a81.jpg",
+          "https://media.joomeo.com/large/6943f64001239.jpg",
+          "https://media.joomeo.com/large/68d65aed19fe9.jpg",
+          "https://media.joomeo.com/large/68d65a1b4edc8.jpg"
         ]
       },
       {
-        "category": "Workspace",
+        "category": "Stairs",
         "images": [
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/6943f71dd837f.jpg",
+          "https://media.joomeo.com/large/68d655d66d866.jpg",
+          "https://media.joomeo.com/large/68d6471723a43.jpg"
+        ]
+      },
+      {
+        "category": "Other Spaces",
+        "images": [
+          "https://media.joomeo.com/large/68d64783b8531.jpg",
+          "https://media.joomeo.com/large/68d6557c1d121.jpg",
+          "https://media.joomeo.com/large/68d64775e33c0.jpg",
+          "https://media.joomeo.com/large/6943fab79603b.jpg",
+          "https://media.joomeo.com/large/6943fb22200ba.jpg"
         ]
       }
     ]
   },
   {
     "id": "zen-retreat",
-    "title": "Kiso Mountain Lodge",
-    "category": "Hospitality",
+    "title": "Project Zen",
+    "category": "Residential",
     "description": "A sanctuary of silence in the deep forest. This retreat draws inspiration from traditional Japanese architecture, featuring charred cedar siding and stone hearths. Every window frames a specific view of the natural landscape.",
-    "location": "Nagano, Japan",
+    "location": "Nairobi, Kenya",
     "year": "2025",
-    "timeline": "24 Months",
-    "featured": false,
-    "image": "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
+    "timeline": "4 Months",
+    "featured": true,
+    "recent": true,
+    "image": "https://media.joomeo.com/large/694691e5273ed.jpg",
     "gallery": [
       {
-        "category": "Exterior",
+        "category": "Living Room",
         "images": [
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/694691e5273ed.jpg"
         ]
       },
       {
-        "category": "Interiors",
+        "category": "Kitchen",
         "images": [
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1540932439986-b06535cf0042?w=1200&h=800&fit=crop",
-          "https://images.unsplash.com/photo-1600210174714-13346b89baff?w=1200&h=800&fit=crop"
+          "https://media.joomeo.com/large/69469125a2f17.jpg",
+          "https://media.joomeo.com/large/6946913677d1e.jpg",
+          "https://media.joomeo.com/large/694691431898a.jpg",
+          "https://media.joomeo.com/large/694691502ef35.jpg",
+          "https://media.joomeo.com/large/6946916b0fae1.jpg",
+          "https://media.joomeo.com/large/694691779e78e.jpg",
+          "https://media.joomeo.com/large/694691a390bac.jpg"
+
+        ]
+      },
+      {
+        "category": "Bedroom",
+        "images": [
+          "https://media.joomeo.com/large/6946919760b3d.jpg"
+        ]
+      },
+      {
+        "category": "Stairs and Floors",
+        "images": [
+          "https://media.joomeo.com/large/694691b2514db.jpg",
+          "https://media.joomeo.com/large/694691cd27937.jpg",
+          "https://media.joomeo.com/large/694691fb55910.jpg"
+        ]
+      }
+    ]
+  },
+    {
+    "id": "Other-Projects",
+    "title": "Our Other Works",
+    "category": "Interiors",
+    "description": "Our journey has been marked by continuous learning, innovation, and an unwavering commitment to excellence. We've had the privilege of transforming over 200 spaces, from intimate homes to grand commercial establishments.",
+    "location": "Nairobi, Kenya",
+    "year": "2010-2025",
+    "timeline": "15 yrs",
+    "featured": true,
+    "image": "https://media.joomeo.com/large/694377e8212ed.jpg",
+    "gallery": [
+
+      {
+        "category": "Kitchen",
+        "images": [
+          "https://media.joomeo.com/large/68fa46323520b.jpg",
+          "https://media.joomeo.com/large/694433cab9d52.jpg",
+          "https://media.joomeo.com/large/694433d624de9.jpg",
+          "https://media.joomeo.com/large/68fa4607b987e.jpg",
+          "https://media.joomeo.com/large/68fa46323520b.jpg",
+          "https://media.joomeo.com/large/68fa46416eece.jpg",
+          "https://media.joomeo.com/large/69443450125e8.jpg",
+          "https://media.joomeo.com/large/68fa466d3f0e7.jpg",
+          "https://media.joomeo.com/large/68fa45a5a5493.jpg",
+          "https://media.joomeo.com/large/68a81755a895e.jpg",
+          "https://media.joomeo.com/large/68a81738c5e25.jpg",
+          "https://media.joomeo.com/large/6944378171dc3.jpg",
+          "https://media.joomeo.com/large/6944378d91332.jpg",
+          "https://media.joomeo.com/large/68a8166cc77eb.jpg",
+          "https://media.joomeo.com/large/68a816467aa4d.jpg",
+          "https://media.joomeo.com/large/68a812e8d7e69.jpg",
+          "https://media.joomeo.com/large/694438601c93c.jpg"
+        ]
+      },
+      {
+        "category": "Wardrobes",
+        "images": [
+          "https://media.joomeo.com/large/68a814c6778d4.jpg",
+          "https://media.joomeo.com/large/68a814e0bc3bf.jpg",
+          "https://media.joomeo.com/large/68a814ecd9890.jpg",
+          "https://media.joomeo.com/large/68fa50da6a6b2.jpg",
+          "https://media.joomeo.com/large/68a8135119335.jpg",
+          "https://media.joomeo.com/large/68a813686a1ef.jpg",
+          "https://media.joomeo.com/large/68a813746a29e.jpg",
+          "https://media.joomeo.com/large/68a8138235478.jpg",
+          "https://media.joomeo.com/large/68a8140d780f0.jpg",
+          "https://media.joomeo.com/large/68a8142dc36a5.jpg",
+          "https://media.joomeo.com/large/68a814547a967.jpg"
+        ]
+      },
+      {
+        "category": "Interior Spaces",
+        "images": [
+          "https://media.joomeo.com/large/69443882d54c0.jpg",
+          "https://media.joomeo.com/large/69443890c324d.jpg",
+          "https://media.joomeo.com/large/6944389b32815.jpg",
+          "https://media.joomeo.com/large/68a8118dd591e.jpg",
+          "https://media.joomeo.com/large/68a8118201f98.jpg",
+          "https://media.joomeo.com/large/68a810ea01147.jpg",
+          "https://media.joomeo.com/large/68a810d9967bb.jpg",
+          "https://media.joomeo.com/large/68fa50da6a6b2.jpg",
+          "https://media.joomeo.com/large/68a8d25f27ed6.jpg",
+          "https://media.joomeo.com/large/6944386e31de0.jpg",
+          "https://media.joomeo.com/large/68a8bcfe1d3f1.jpg",
+          "https://media.joomeo.com/large/6944366aafd4e.jpg",
+          "https://media.joomeo.com/large/69443845095a4.jpg",
+          "https://media.joomeo.com/large/694438544b3dc.jpg",
+          "https://media.joomeo.com/large/6944368136033.jpg",
+          "https://media.joomeo.com/large/694436917ee99.jpg"
         ]
       }
     ]

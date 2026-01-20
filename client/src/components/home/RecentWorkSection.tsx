@@ -10,8 +10,14 @@ export function RecentWorkSection() {
   useEffect(() => {
     const loadProjects = async () => {
       const data = await getProjects();
-      const featured = data.filter(p => p.featured);
-      setProjects(featured);
+      const recent = data.filter((p) => p.recent);
+      // limit to 3 items; fallback to featured then all
+      let list = recent.slice(0, 3);
+      if (list.length === 0) {
+        const featured = data.filter((p) => p.featured).slice(0, 3);
+        list = featured.length ? featured : data.slice(0, 3);
+      }
+      setProjects(list);
       setLoading(false);
     };
 
@@ -48,30 +54,31 @@ export function RecentWorkSection() {
 
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {recentWorks.map((work, idx) => (
-          <motion.div
-            key={work.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative overflow-hidden rounded-lg break-inside-avoid cursor-pointer"
-          >
-            <div className={`${work.height} relative overflow-hidden rounded-lg`}>
-              <img
-                src={work.image}
-                alt={work.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex flex-col items-end justify-end p-6 opacity-0 group-hover:opacity-100">
-                <div className="text-right">
-                  <p className="text-background font-heading text-lg">{work.title}</p>
-                  <p className="text-background/80 text-sm">{work.location}</p>
+          <Link href={`/projects?id=${work.id}`} key={work.id} className="block">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-lg break-inside-avoid cursor-pointer"
+            >
+              <div className={`${work.height} relative overflow-hidden rounded-lg`}>
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex flex-col items-end justify-end p-6 opacity-0 group-hover:opacity-100">
+                  <div className="text-right">
+                    <p className="text-background font-heading text-lg">{work.title}</p>
+                    <p className="text-background/80 text-sm">{work.location}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         ))}
       </div>
 
