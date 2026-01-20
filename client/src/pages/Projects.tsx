@@ -88,7 +88,7 @@ export default function Projects() {
                 <span className="text-xs uppercase tracking-widest">Projects</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className="p-0 border-r border-white/10 bg-sidebar w-80">
+            <SheetContent side="left" className="p-0 border-r border-white/10 bg-sidebar w-[85vw] sm:w-80">
                 <SheetTitle className="sr-only">Project Menu</SheetTitle>
               <div className="h-full pt-6">
                 <ProjectSidebar projects={projects} selectedId={selectedProject.id} />

@@ -39,7 +39,7 @@ export function Hero() {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-background">
+    <div className="relative w-full min-h-screen overflow-hidden bg-background">
       {/* Background Image Transition Layer */}
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
@@ -61,7 +61,7 @@ export function Hero() {
       </AnimatePresence>
 
       {/* Main Content Area */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-32 px-6 md:px-20 container mx-auto">
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-32 pt-24 px-6 md:px-20 container mx-auto">
         <div className="max-w-4xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -81,7 +81,7 @@ export function Hero() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-foreground mb-6 leading-[0.9]">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading text-foreground mb-6 leading-[0.9]">
                 {activeProject.title}
               </h1>
 

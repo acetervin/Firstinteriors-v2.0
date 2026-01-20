@@ -24,14 +24,17 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="h-full overflow-y-auto bg-background">
       {/* Detail Header Image */}
-      <div className="relative h-[50vh] w-full overflow-hidden">
+      <div className="relative w-full min-h-[50vh] flex flex-col justify-end overflow-hidden pt-24">
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 to-background z-10" />
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bottom-0 left-0 p-8 md:p-16 z-20 w-full">
+        <div className="absolute inset-0 z-0">
+            <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            />
+        </div>
+        
+        <div className="relative z-20 w-full p-8 md:p-16 mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -50,7 +53,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 </p>
               </div>
               
-              <div className="flex gap-8 border-l border-foreground/10 pl-8">
+              <div className="flex gap-8 border-t pt-6 border-foreground/10 md:border-t-0 md:pt-0 md:border-l md:pl-8">
                  <div>
                     <span className="block text-[10px] text-foreground/40 uppercase tracking-widest mb-1">Completed</span>
                     <span className="text-xl text-foreground font-heading">{project.year}</span>
