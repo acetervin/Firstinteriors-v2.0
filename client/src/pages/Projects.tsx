@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { ProjectSidebar } from "@/components/project/ProjectSidebar";
 import { ProjectDetail } from "@/components/project/ProjectDetail";
+import { ProjectGrid } from "@/components/project/ProjectGrid";
 import { Footer } from "@/components/home/Footer";
 import { getProjects, Project } from "@/lib/data";
 import { useLocation, useSearch } from "wouter";
@@ -33,11 +34,14 @@ export default function Projects() {
         
         setProjects(data);
         
-        const project = selectedId 
-          ? data.find(p => p.id === selectedId) 
-          : data[0];
-        
-        setSelectedProject(project || data[0]);
+        // Only select a project if an ID is provided in the URL
+        if (selectedId) {
+          const project = data.find(p => p.id === selectedId);
+          setSelectedProject(project || null);
+        } else {
+          setSelectedProject(null);
+        }
+
         setLoading(false);
       } catch (err) {
         console.error('Failed to load projects:', err);
@@ -56,26 +60,40 @@ export default function Projects() {
   if (loading) {
     return (
       <div className="h-screen flex flex-col bg-background overflow-hidden items-center justify-center">
-        <div className="text-white/40">Loading projects...</div>
+        <div className="text-foreground/40">Loading projects...</div>
       </div>
     );
   }
 
-  if (error || !selectedProject) {
+  if (error) {
     return (
       <div className="h-screen flex flex-col bg-background overflow-hidden items-center justify-center">
-        <div className="text-white/40">Failed to load projects. Please try again.</div>
+        <div className="text-foreground/40">Failed to load projects. Please try again.</div>
       </div>
     );
   }
 
+  // View: All Projects (Grid)
+  if (!selectedId || !selectedProject) {
+    return (
+      <div className="flex flex-col bg-background min-h-screen">
+        <Navbar />
+        <main className="flex-1">
+          <ProjectGrid projects={projects} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // View: Single Project Detail
   return (
     <div className="flex flex-col bg-background min-h-screen">
       <Navbar />
       
       <div className="flex flex-1 pt-20 relative overflow-hidden">
         {/* Desktop Sidebar - Hidden on mobile */}
-        <div className="hidden md:block w-80 h-full overflow-y-auto">
+        <div className="hidden md:block w-80 h-full overflow-y-auto border-r border-foreground/10">
           <ProjectSidebar projects={projects} selectedId={selectedProject.id} />
         </div>
 
