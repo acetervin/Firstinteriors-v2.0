@@ -11,7 +11,15 @@ export interface Project {
   gallery: { category: string; images: string[] }[];
 }
 
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  rating: number;
+}
+
 let projectsCache: Project[] | null = null;
+let testimonialsCache: Testimonial[] | null = null;
 
 export async function getProjects(): Promise<Project[]> {
   if (projectsCache) {
@@ -27,6 +35,24 @@ export async function getProjects(): Promise<Project[]> {
     return projectsCache as Project[];
   } catch (error) {
     console.error('Error loading projects:', error);
+    return [];
+  }
+}
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  if (testimonialsCache) {
+    return testimonialsCache;
+  }
+
+  try {
+    const response = await fetch('/testimonials.json');
+    if (!response.ok) {
+      throw new Error('Failed to load testimonials');
+    }
+    testimonialsCache = await response.json();
+    return testimonialsCache as Testimonial[];
+  } catch (error) {
+    console.error('Error loading testimonials:', error);
     return [];
   }
 }

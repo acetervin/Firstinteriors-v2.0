@@ -1,35 +1,25 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  rating: number;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    quote: "First Interior Designs transformed our home into a sanctuary. Their attention to detail and understanding of our vision was exceptional. Every corner tells a story.",
-    author: "Sarah Kimani",
-    role: "Residential Client",
-    rating: 5,
-  },
-  {
-    quote: "Working with the team was a seamless experience. They brought sophistication and functionality together in ways we couldn't have imagined. Highly recommended.",
-    author: "James Ochieng",
-    role: "Business Owner",
-    rating: 5,
-  },
-  {
-    quote: "The craftsmanship and aesthetic vision are unparalleled. They took our commercial space from ordinary to extraordinary. We receive compliments from every client who walks through our doors.",
-    author: "Patricia Wanjiru",
-    role: "Corporate Executive",
-    rating: 5,
-  },
-];
+import { useEffect, useState } from "react";
+import { getTestimonials, Testimonial } from "@/lib/data";
 
 export function TestimonialSection() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await getTestimonials();
+      setTestimonials(data);
+      setLoading(false);
+    };
+    loadData();
+  }, []);
+
+  if (loading || testimonials.length === 0) {
+    return null; // Or return a loading skeleton if preferred
+  }
+
   return (
     <section className="py-24 px-6 md:px-20 container mx-auto">
       <div className="text-center mb-16">
