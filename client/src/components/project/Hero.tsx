@@ -61,7 +61,7 @@ export function Hero() {
       </AnimatePresence>
 
       {/* Main Content Area */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32 pt-24 px-6 md:px-20 container mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-center pb-24 md:pb-32 pt-24 px-6 md:px-20 container mx-auto">
         <div className="max-w-4xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -71,46 +71,45 @@ export function Hero() {
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-primary text-sm font-medium tracking-widest uppercase">
-                  {activeProject.category}
-                </span>
-                <span className="w-12 h-[1px] bg-foreground/30 hidden md:block"></span>
-                <span className="text-foreground/70 text-sm font-light tracking-widest hidden md:block">
-                  {activeProject.location}
-                </span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading text-foreground mb-6 leading-[0.9]">
+              <h1 className="text-5xl sm:text-6xl md:text-8xl font-heading font-medium text-foreground mb-6 leading-[0.9] tracking-tight">
                 {activeProject.title}
               </h1>
+
+              {/* Category Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
+                  {activeProject.category}
+                </span>
+              </div>
 
               <p className="text-foreground/80 max-w-lg text-lg font-light leading-relaxed mb-10 text-balance hidden md:block">
                 {activeProject.description}
               </p>
 
-              {/* Stats Grid - Hidden on mobile to save space, or kept if essential? User said "key project data" pushed down. 
-                  Let's keep it but maybe compact it or just hide description is enough. 
-                  Hiding description is the main request. 
-              */}
-              <div className="grid grid-cols-2 gap-8 mb-8 md:mb-10 border-t border-foreground/10 pt-6 md:pt-8 max-w-2xl">
-                <div>
-                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Timeline</p>
-                  <p className="text-foreground text-lg md:text-xl font-heading">{activeProject.timeline}</p>
+              {/* Premium Stats & CTA Layout */}
+              <div className="flex flex-col gap-8 md:gap-10">
+                {/* Stats */}
+                <div className="flex items-center gap-12 border-l-2 border-primary/50 pl-6">
+                    <div>
+                      <p className="text-foreground/50 text-[10px] uppercase tracking-[0.2em] mb-2">Timeline</p>
+                      <p className="text-foreground text-xl font-heading font-light">{activeProject.timeline}</p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/50 text-[10px] uppercase tracking-[0.2em] mb-2">Year</p>
+                      <p className="text-foreground text-xl font-heading font-light">{activeProject.year}</p>
+                    </div>
                 </div>
-                <div>
-                  <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Year</p>
-                  <p className="text-foreground text-lg md:text-xl font-heading">{activeProject.year}</p>
-                </div>
-              </div>
 
-              <Link 
-                href={`/projects?id=${activeProject.id}`}
-                className="group inline-flex items-center gap-4 px-8 py-4 bg-primary text-background hover:bg-primary/90 transition-colors rounded-full text-sm font-medium tracking-widest uppercase shadow-lg md:shadow-none"
-              >
-                View Project
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+                {/* Button */}
+                <Link 
+                  href={`/projects?id=${activeProject.id}`}
+                  className="w-fit group flex items-center gap-3 px-6 py-3 bg-primary text-background hover:bg-primary/90 transition-all rounded-full text-[10px] font-bold tracking-[0.2em] uppercase shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                >
+                  View Project
+                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
